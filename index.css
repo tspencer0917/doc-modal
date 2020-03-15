@@ -1,0 +1,137 @@
+
+.img-menu {
+  display: none;
+  width: 100vw;
+}
+
+.img-menu-item{
+  float: left;
+  opacity: 0.8;
+}
+
+.img-menu-item:hover {
+  opacity: 1;
+  cursor: pointer;
+  
+}
+
+.doc-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.3s;
+}
+.doc-modal.hide {
+  opacity: 0;
+  z-index: -1;
+}
+
+.doc-modal-content {
+  position: absolute;
+  width: 70%;
+  height: 85%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgb(120, 120, 120);
+  display: grid;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform ease 0.5s;
+}
+.doc-modal.hide .doc-modal-content {
+  transform: translate(0, -100%);
+}
+
+.slide {
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  align-items: center;
+  justify-items: center;
+  transition: transform 0.3s, opacity 0.5s ease-out;
+}
+.slide.hide {
+  opacity: 0;
+}
+.slide.right {
+  transform: translate(-100%);
+}
+.slide.left {
+  transform: translate(-100%);
+}
+
+.prev,
+.next,
+.close,
+.rotate {
+  position: absolute;
+  color: black;
+  background-color: rgba(120, 120, 120, 0.5);
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.close:hover,
+.prev:hover,
+.next:hover,
+.rotate:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close,
+.rotate {
+  top: 10px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+}
+
+.close {
+  right: 10px;
+  font-size: 35px;
+}
+
+.rotate {
+  right: 60px;
+  font-size: 23px;
+}
+
+.prev,
+.next {
+  top: 50%;
+  padding: 16px;
+  font-size: 20px;
+  transform: translate(0%,-50%);
+}
+
+.prev {
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev,
+.next,
+.close,
+.rotate,
+.img-menu-img,
+.doc {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
